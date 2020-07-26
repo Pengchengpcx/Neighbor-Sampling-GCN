@@ -1,7 +1,8 @@
 Graph Convolutional Networks in PyTorch
 ====
+Toy pytorch implementation for neighbor sampling for SGD traning based on GCN for semi-supervised classification [1].
 
-PyTorch implementation of Graph Convolutional Networks (GCNs) for semi-supervised classification [1].
+Note: original adjacent matrix is implemented by Sparse CUDA. For convenience, it is converted into dense version which significantly lowers down the training speed due to the lack of backend optimization.
 
 For a high-level introduction to GCNs, see:
 
@@ -32,15 +33,5 @@ This implementation makes use of the Cora dataset from [2].
 
 [2] [Sen et al., Collective Classification in Network Data, AI Magazine 2008](http://linqs.cs.umd.edu/projects/projects/lbc/)
 
-## Cite
+[3] [Hamilton, William L, Ying, Rex, and Leskovec, Jure. Inductive representation learning on large graphs.](https://arxiv.org/abs/1706.02216)
 
-Please cite our paper if you use this code in your own work:
-
-```
-@article{kipf2016semi,
-  title={Semi-Supervised Classification with Graph Convolutional Networks},
-  author={Kipf, Thomas N and Welling, Max},
-  journal={arXiv preprint arXiv:1609.02907},
-  year={2016}
-}
-```
