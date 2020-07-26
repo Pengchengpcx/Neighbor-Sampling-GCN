@@ -1,6 +1,6 @@
-Graph Convolutional Networks in PyTorch
+Neighbor Sampling Graph Convolutional Networks in PyTorch
 ====
-Toy pytorch implementation for neighbor sampling for SGD traning based on GCN for semi-supervised classification [1].
+Toy pytorch implementation for neighbor sampling [3] for SGD traning based on GCN for semi-supervised classification [1].
 
 Note: original adjacent matrix is implemented by Sparse CUDA. For convenience, it is converted into dense version which significantly lowers down the training speed due to the lack of backend optimization.
 

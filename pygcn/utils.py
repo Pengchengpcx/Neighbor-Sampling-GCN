@@ -85,15 +85,6 @@ def sub_graph(adj, num):
     adj: normalized and processed graph adjacent matrix
     num: the number of samples for each neighbor
     '''
-    # nodes = adj.shape[0]
-    # neighbor_number = adj.to_dense()
-    # print('normalize neighbor', torch.sum(neighbor_number,dim=1)[0:10])
-    # neighbor_number = torch.sum(neighbor_number>0,dim=1).float().reshape(-1,1)/float(num)
-    # mask = torch.zeros(nodes,nodes).cuda()
-    # for i in range(nodes):
-    #     sample = torch.randint(0,nodes,(num,))
-    #     mask[i,sample] = 1.0
-    #     mask[sample,i] = 1.0
     num_nodes = adj.shape[0]
     dense_adj = adj.to_dense()
     mask = torch.zeros(num_nodes, num_nodes).cuda()
@@ -108,8 +99,7 @@ def sub_graph(adj, num):
         mask[sampled_neighbors, i] = 1.0
     # renormalized the adjacent matrix based on subgraph
     dense_adj = dense_adj*mask.float()*normalized_coeff
-
-    # return adj.to_dense()*mask.float()*neighbor_number.float()
+    
     return dense_adj
 
     
